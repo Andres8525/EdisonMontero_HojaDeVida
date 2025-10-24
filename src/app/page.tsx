@@ -11,7 +11,7 @@ export default function Page() {
     "/E2.jpg",
     "/E3.jpg",
     "/E4.jpg",
-    "/img5.jpg",
+    "/E5.jpg",
   ];
 
   const nextSlide = () => setCurrent((current + 1) % images.length);
