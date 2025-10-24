@@ -7,10 +7,10 @@ export default function Page() {
 
   // Aquí colocarás las 5 imágenes que quieras usar
   const images = [
-    "/img1.jpg",
-    "/img2.jpg",
-    "/img3.jpg",
-    "/img4.jpg",
+    "/E1.jpg",
+    "/E2.jpg",
+    "/E3.jpg",
+    "/E4.jpg",
     "/img5.jpg",
   ];
 
