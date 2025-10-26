@@ -35,7 +35,7 @@ export default function Testimonios() {
               </div>
             </div>
             
-            <p className="text-gray-200 italic">"{testimonio.texto}"</p>
+            <p className="text-gray-200 italic">{testimonio.texto}</p>
             
             <div className="flex text-orange-400 mt-4">
               ⭐⭐⭐⭐⭐
