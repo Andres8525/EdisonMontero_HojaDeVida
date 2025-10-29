@@ -61,7 +61,7 @@ export default function Page() {
         <h2 className="text-2xl font-semibold text-orange-300 mb-4">Mis estudios</h2>
         <p className="bg-purple-200 text-black p-4 rounded-lg shadow-md max-w-2xl">
           Soy bachiller del Colegio Comfamiliar, tengo un diplomado de Contabilidad en la Universidad Mariana y
-          he completado 2 cursos de programación en Platzi.
+          he completado 2 cursos de programación en Platzi a parte de seciones en diferentes Seminarios.
         </p>
       </section>
 
