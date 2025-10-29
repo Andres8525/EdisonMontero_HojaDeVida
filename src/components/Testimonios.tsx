@@ -10,7 +10,7 @@ export default function Testimonios() {
       nombre: "Yury Garcia",
       cargo: "Psicologa Alcaldia de Pasto",
       texto: "Un profesional comprometido con gran capacidad de aprendizaje. Siempre dispuesto a asumir nuevos retos y liderar actividades importantes.",
-      imagen: "/referencia2.jpg"
+      imagen: "/R1.jpg"
     },
     {
       nombre: "Dayan Romo",
