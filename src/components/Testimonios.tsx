@@ -4,7 +4,7 @@ export default function Testimonios() {
       nombre: "Diego Mallama",
       cargo: "Ing. Software",
       texto: "Edison demostró excelentes habilidades de liderazgo y compromiso. Su puntualidad y dedicación fueron ejemplares durante los 2 años que trabajó con nosotros.",
-      imagen: "/R2.jpg"
+      imagen: "/R4.jpg"
     },
     {
       nombre: "Yury Garcia",
@@ -16,7 +16,7 @@ export default function Testimonios() {
       nombre: "Dayan Romo",
       cargo: "Coordinador Técnico - Unitik",
       texto: "Edison es una persona responsable y con iniciativa. Su experiencia técnica y habilidades interpersonales lo hacen un gran colaborador.",
-      imagen: "/referencia3.jpg"
+      imagen: "/R3.jpg"
     }
   ];
 
