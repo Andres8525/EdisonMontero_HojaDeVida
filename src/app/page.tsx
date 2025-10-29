@@ -25,7 +25,7 @@ export default function Page() {
         <div className="mb-8">
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-orange-400 shadow-2xl">
             <img
-              src="/perfil.jpg"
+              src="/P1.jpg"
               alt="Edison Montero Garcia"
               className="w-full h-full object-cover"
             />
