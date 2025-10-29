@@ -52,7 +52,7 @@ export default function Page() {
         <h2 className="text-2xl font-semibold text-orange-300 mb-4">Sobre mí</h2>
         <p className="bg-purple-200 text-black p-4 rounded-lg shadow-md max-w-2xl">
           Poseo habilidad para emprender y liderar actividades, me gusta ser puntual, disfruto manejar motocicleta,
-          ver los atardeceres y hacer ejercicio. En mis tiempos libres me agrada leer.
+          ver los atardeceres y hacer ejercicio. En mis tiempos libres me agrada leer en la sección galeria hay imagenes de mis pasatiempos.
         </p>
       </section>
 
