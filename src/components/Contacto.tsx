@@ -36,7 +36,7 @@ export default function Contacto() {
               <div>
                 <p className="font-semibold">Email</p>
                 <a href="mailto:edison.montero@example.com" className="text-blue-600 hover:underline">
-                  edison.montero@example.com
+                  edisongarcia890@gmail.com
                 </a>
               </div>
             </div>
@@ -46,7 +46,7 @@ export default function Contacto() {
               <div>
                 <p className="font-semibold">Teléfono</p>
                 <a href="tel:+573001234567" className="text-blue-600 hover:underline">
-                  +57 300 123 4567
+                  +57 311 422 1921
                 </a>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function Contacto() {
               <div>
                 <p className="font-semibold">GitHub</p>
                 <a href="#" className="text-blue-600 hover:underline">
-                  github.com/edisonmontero
+                  github.com/Andres8525
                 </a>
               </div>
             </div>
