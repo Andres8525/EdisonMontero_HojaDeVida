@@ -8,10 +8,9 @@ import ExperienciaLaboral from "../components/ExperienciaLaboral";
 import Proyectos from "../components/Proyectos";
 import Testimonios from "../components/Testimonios";
 import Contacto from "../components/Contacto";
-import Galeria from "../components/Galeria"; // 👈 nuevo
+import Galeria from "../components/Galeria"; 
 
 export default function Page() {
-  // (opcional) si ya no se usa estado aquí, puedes borrar useState/Image
   const [current, setCurrent] = useState(0);
   const images = ["/E1.jpg", "/E2.jpg", "/E3.jpg", "/E4.jpg", "/E5.jpg"];
 
@@ -21,10 +20,30 @@ export default function Page() {
       <Navbar />
 
       {/* INICIO */}
-      <section id="inicio" className="flex flex-col items-center justify-center py-16 text-center scroll-mt-28">
-        <h2 className="text-3xl font-bold mb-4 text-orange-300">Bienvenido a mi página personal</h2>
-        <p className="max-w-2xl text-gray-200">
-          Explora mi información personal, mis pasatiempos, mis estudios y una galería de mis fotos favoritas.
+     <section id="inicio" className="flex flex-col items-center justify-center py-20 text-center px-4">
+        {/* Espacio para imagen de perfil */}
+        <div className="mb-8">
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-orange-400 shadow-2xl">
+            <img
+              src="/perfil.jpg"
+              alt="Edison Montero Garcia"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Título con nombre */}
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-orange-300">
+          Edison Montero García
+        </h1>
+        
+        {/* Frase profesional */}
+        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mb-2">
+          Profesional comprometido con el liderazgo y la innovación
+        </p>
+        
+        <p className="text-lg text-gray-300 max-w-2xl">
+          Apasionado por la tecnología, el emprendimiento y el desarrollo continuo
         </p>
       </section>
 
