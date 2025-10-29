@@ -1,22 +1,22 @@
 export default function Testimonios() {
   const testimonios = [
     {
-      nombre: "Carlos Rodríguez",
-      cargo: "Gerente de Operaciones - JF ZAMBRANO SAS",
+      nombre: "Diego Mallama",
+      cargo: "Ing. Software",
       texto: "Edison demostró excelentes habilidades de liderazgo y compromiso. Su puntualidad y dedicación fueron ejemplares durante los 2 años que trabajó con nosotros.",
-      foto: "👤"
+      imagen: "/R2.jpg"
     },
     {
-      nombre: "Ana María López",
-      cargo: "Supervisora de Equipo",
+      nombre: "Yury Garcia",
+      cargo: "Psicologa Alcaldia de Pasto",
       texto: "Un profesional comprometido con gran capacidad de aprendizaje. Siempre dispuesto a asumir nuevos retos y liderar actividades importantes.",
-      foto: "👤"
+      imagen: "/referencia2.jpg"
     },
     {
-      nombre: "Miguel Torres",
+      nombre: "Dayan Romo",
       cargo: "Coordinador Técnico - Unitik",
       texto: "Edison es una persona responsable y con iniciativa. Su experiencia técnica y habilidades interpersonales lo hacen un gran colaborador.",
-      foto: "👤"
+      imagen: "/referencia3.jpg"
     }
   ];
 
@@ -28,18 +28,21 @@ export default function Testimonios() {
         {testimonios.map((testimonio, idx) => (
           <div key={idx} className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md hover:bg-white/15 transition-all">
             <div className="flex items-center mb-4">
-              <div className="text-4xl mr-3">{testimonio.foto}</div>
+              {/* Imagen de perfil de la referencia */}
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-orange-400 mr-3 flex-shrink-0">
+                <img
+                  src={testimonio.imagen}
+                  alt={testimonio.nombre}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div>
                 <p className="font-bold text-orange-300">{testimonio.nombre}</p>
                 <p className="text-sm text-gray-300">{testimonio.cargo}</p>
               </div>
             </div>
             
-            <p className="text-gray-200 italic">{testimonio.texto}</p>
-            
-            <div className="flex text-orange-400 mt-4">
-              ⭐⭐⭐⭐⭐
-            </div>
+            <p className="text-gray-200 italic">&ldquo;{testimonio.texto}&rdquo;</p>
           </div>
         ))}
       </div>
