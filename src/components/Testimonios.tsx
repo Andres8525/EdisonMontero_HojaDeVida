@@ -22,7 +22,7 @@ export default function Testimonios() {
 
   return (
     <section id="testimonios" className="py-16 px-4 md:px-20 bg-[#20496E]">
-      <h2 className="text-2xl font-semibold text-orange-300 mb-6">Testimonios</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-8 text-center">Testimonios</h2>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {testimonios.map((testimonio, idx) => (

@@ -22,7 +22,7 @@ export default function Proyectos() {
 
   return (
     <section id="proyectos" className="py-16 px-4 md:px-20 bg-[#2A517E]">
-      <h2 className="text-2xl font-semibold text-orange-300 mb-6">Mis Proyectos</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-8 text-center">Mis Proyectos</h2>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {proyectos.map((proyecto, idx) => (

@@ -23,7 +23,7 @@ export default function Contacto() {
 
   return (
     <section id="contacto" className="py-16 px-4 md:px-20 bg-[#2A517E]">
-      <h2 className="text-2xl font-semibold text-orange-300 mb-6">Mi Contacto</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-8 text-center">Mi Contacto</h2>
       
       <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {/* Información de contacto */}
