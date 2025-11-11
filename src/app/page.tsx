@@ -49,7 +49,7 @@ export default function Page() {
 
       {/* SOBRE MÍ */}
       <section id="sobremi" className="py-16 bg-[#2A517E] px-4 md:px-20 scroll-mt-28">
-        <h2 className="text-2xl font-semibold text-orange-300 mb-4">Sobre mí</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-8 text-center">Sobre mí</h2>
         <p className="bg-purple-200 text-black p-4 rounded-lg shadow-md max-w-2xl">
           Poseo habilidad para emprender y liderar actividades, me gusta ser puntual, disfruto manejar motocicleta,
           ver los atardeceres y hacer ejercicio. En mis tiempos libres me agrada leer en la sección galeria hay imagenes de mis pasatiempos.

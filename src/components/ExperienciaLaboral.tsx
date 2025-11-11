@@ -1,7 +1,7 @@
 export default function ExperienciaLaboral() {
   return (
     <section id="experiencia" className="py-16 px-4 md:px-20 bg-[#20496E]">
-      <h2 className="text-2xl font-semibold text-orange-300 mb-4">Mi Experiencia Laboral</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-8 text-center">Mi Experiencia Laboral</h2>
       <div className="bg-purple-200 text-black p-6 rounded-lg shadow-md max-w-2xl">
         <p className="mb-6">
           Tengo experiencia en 2 empresas Unitik internet sin límite estuve trabajando durante un año y 2 años como procesador en JF ZAMBRANO SAS
