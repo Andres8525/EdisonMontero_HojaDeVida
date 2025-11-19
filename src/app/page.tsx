@@ -123,7 +123,7 @@ export default function Page() {
             <p className={`text-lg md:text-xl max-w-3xl ${textNormal}`}>
               {language === "es"
                 ? "Estudiante de Ingeniería de Software, dedicado a ser un líder innovador y a desarrollar soluciones tecnológicas que tengan un impacto significativo."
-                : "Professional committed to leadership and innovation."}
+                : "Software Engineering student, dedicated to being an innovative leader and developing technological solutions that have a significant impact."}
             </p>
           </section>
 
