@@ -160,7 +160,7 @@ export default function Contacto() {
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center shadow-md">
                 <Image
-                  src="/icons/location.png"
+                  src="/ubi1.png"
                   alt="Location icon"
                   width={20}
                   height={20}
