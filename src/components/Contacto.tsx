@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -32,6 +33,7 @@ export default function Contacto() {
       [e.target.name]: e.target.value,
     });
   };
+
   const containerBg =
     theme === "light"
       ? "bg-gradient-to-br from-blue-100 to-blue-200"
@@ -69,6 +71,7 @@ export default function Contacto() {
 
   return (
     <section
+      id="contacto"
       className={`py-16 px-4 md:px-20 ${containerBg} rounded-2xl ${shadowStyle} transition-all duration-500`}
     >
       <h2
@@ -99,8 +102,17 @@ export default function Contacto() {
           </h3>
 
           <div className="space-y-4">
+            {/* Email */}
             <div className="flex items-start gap-3">
-              <span className="text-2xl">📧</span>
+              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-md">
+                <Image
+                  src="/icons/email.png"
+                  alt="Email icon"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>Email</p>
                 <a
@@ -109,15 +121,24 @@ export default function Contacto() {
                     theme === "light"
                       ? "text-blue-700"
                       : "text-orange-300"
-                  } hover:underline`}
+                  } hover:underline break-all`}
                 >
                   edisongarcia890@gmail.com
                 </a>
               </div>
             </div>
 
+            {/* Teléfono */}
             <div className="flex items-start gap-3">
-              <span className="text-2xl">📱</span>
+              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-md">
+                <Image
+                  src="/icons/phone.png"
+                  alt="Phone icon"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>
                   {language === "es" ? "Teléfono" : "Phone"}
@@ -135,8 +156,17 @@ export default function Contacto() {
               </div>
             </div>
 
+            {/* Ubicación */}
             <div className="flex items-start gap-3">
-              <span className="text-2xl">📍</span>
+              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center shadow-md">
+                <Image
+                  src="/icons/location.png"
+                  alt="Location icon"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>
                   {language === "es" ? "Ubicación" : "Location"}
@@ -147,27 +177,47 @@ export default function Contacto() {
               </div>
             </div>
 
+            {/* LinkedIn */}
             <div className="flex items-start gap-3">
-              <span className="text-2xl">💼</span>
+              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
+                <Image
+                  src="/linkedin.png"
+                  alt="LinkedIn icon"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>
                   LinkedIn
                 </p>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/edison-montero-886603368"
                   className={`text-sm md:text-base ${
                     theme === "light"
                       ? "text-blue-700"
                       : "text-orange-300"
-                  } hover:underline`}
+                  } hover:underline break-all`}
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  https://www.linkedin.com/in/edison-montero-886603368
+                  linkedin.com/in/edison-montero
                 </a>
               </div>
             </div>
 
+            {/* GitHub */}
             <div className="flex items-start gap-3">
-              <span className="text-2xl">💻</span>
+              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center shadow-md">
+                <Image
+                  src="/github.png"
+                  alt="GitHub icon"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>GitHub</p>
                 <a
@@ -176,7 +226,7 @@ export default function Contacto() {
                     theme === "light"
                       ? "text-blue-700"
                       : "text-orange-300"
-                  } hover:underline`}
+                  } hover:underline break-all`}
                   target="_blank"
                   rel="noreferrer"
                 >
