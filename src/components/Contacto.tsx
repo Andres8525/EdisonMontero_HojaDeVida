@@ -132,7 +132,7 @@ export default function Contacto() {
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-md">
                 <Image
-                  src="/icons/phone.png"
+                  src="/llamada.png"
                   alt="Phone icon"
                   width={20}
                   height={20}
