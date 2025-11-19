@@ -32,8 +32,6 @@ export default function Contacto() {
       [e.target.name]: e.target.value,
     });
   };
-
-  // Estilos coherentes con ExperienciaLaboral y Proyectos
   const containerBg =
     theme === "light"
       ? "bg-gradient-to-br from-blue-100 to-blue-200"
@@ -163,7 +161,7 @@ export default function Contacto() {
                       : "text-orange-300"
                   } hover:underline`}
                 >
-                  linkedin.com/in/edison-montero
+                  https://www.linkedin.com/in/edison-montero-886603368
                 </a>
               </div>
             </div>
