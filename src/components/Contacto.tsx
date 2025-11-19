@@ -106,7 +106,7 @@ export default function Contacto() {
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-md">
                 <Image
-                  src="/icons/email.png"
+                  src="/correo.png"
                   alt="Email icon"
                   width={20}
                   height={20}

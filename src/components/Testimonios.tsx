@@ -23,7 +23,7 @@ export default function Testimonios() {
       cargoEs: "Ing. Software",
       cargoEn: "Software Engineer",
       textoEs:
-        "Edison demostró excelentes habilidades de liderazgo y compromiso. Su capacidad para resolver problemas y su dedicación fueron ejemplares durante el tiempo que trabajó con nosotros.",
+        "Edison demostró excelentes habilidades de compañerismo. Su capacidad para resolver problemas y su actitud como compañero de estudio a sido muy agradable.",
       textoEn:
         "Edison demonstrated excellent leadership and commitment. His problem-solving skills and dedication were exemplary during the time he worked with us.",
       imagen: "/R4.jpg",
@@ -33,7 +33,7 @@ export default function Testimonios() {
       cargoEs: "Psicóloga Alcaldía de Pasto",
       cargoEn: "Psychologist – City Hall of Pasto",
       textoEs:
-        "Es un profesional comprometido, con gran capacidad de aprendizaje y trabajo en equipo. Siempre está dispuesto a asumir nuevos retos y liderar actividades importantes.",
+        "Es una persona comprometida, con gran capacidad de aprendizaje y trabajo en equipo. Siempre está dispuesto a asumir nuevos retos y liderar actividades importantes.",
       textoEn:
         "He is a committed professional with great learning capacity and teamwork skills. He is always willing to take on new challenges and lead important activities.",
       imagen: "/R1.jpg",
