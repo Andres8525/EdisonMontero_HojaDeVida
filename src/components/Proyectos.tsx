@@ -9,11 +9,12 @@ export default function Proyectos() {
 
   const proyectos = [
     {
-      titulo: language === 'es' ? "Proyecto Web Personal" : "Personal Web Project",
-      descripcion: language === 'es' 
+      titulo: language === 'es' ? "Proyecto Web Entretenimiento" : "Personal Web Project",
+      descripcion: language === 'es'
         ? "Página personal desarrollada con Next.js y Tailwind CSS"
         : "Personal page developed with Next.js and Tailwind CSS",
       tecnologias: ["Next.js", "React", "Tailwind CSS"],
+      link:"https://github.com/Andres8525/node-project.git",
       estado: language === 'es' ? "Completado" : "Completed"
     },
     {
@@ -21,17 +22,17 @@ export default function Proyectos() {
       descripcion: language === 'es'
         ? "Aplicación para gestión de inventario y procesos "
         : "Application for inventory and process management",
-        
       tecnologias: ["JavaScript", "Node.js", "CSS"],
       link: "https://github.com/Andres8525/CRM_JED.git",
       estado: language === 'es' ? "En desarrollo" : "In development"
     },
     {
-      titulo: language === 'es' ? "Proyecto de Automatización" : "Automation Project",
+      titulo: language === 'es' ? "Proyecto de Automatización de Tareas" : "AutomTask Automation Projectation Project",
       descripcion: language === 'es'
         ? "Scripts y herramientas para automatizar tareas repetitivas"
         : "Scripts and tools to automate repetitive tasks",
       tecnologias: ["Python", "JavaScript"],
+      link: "https://github.com/Diego2004-max/TallerFormularios_Diego_Edison.git",
       estado: language === 'es' ? "Completado" : "Completed"
     }
   ];
@@ -59,27 +60,60 @@ export default function Proyectos() {
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {proyectos.map((proyecto, idx) => (
-          <div key={idx} className={`${cardBg} ${textPrimary} p-6 rounded-xl ${shadowStyle} hover:shadow-[0_12px_40px_rgb(59,130,246,0.25)] hover:scale-105 transition-all duration-300`}>
+          <div key={idx}
+            className={`${cardBg} ${textPrimary} p-6 rounded-xl ${shadowStyle} hover:shadow-[0_12px_40px_rgb(59,130,246,0.25)] hover:scale-105 transition-all duration-300`}
+          >
+            {/* Título y estado */}
             <div className="mb-3">
               <h3 className="text-xl font-bold mb-2">{proyecto.titulo}</h3>
-              <span className={`text-xs px-3 py-1 rounded-full ${
-                proyecto.estado.includes("Completado") || proyecto.estado.includes("Completed")
-                  ? theme === 'light' ? "bg-green-500 text-white" : "bg-green-600 text-white"
-                  : theme === 'light' ? "bg-yellow-400 text-black" : "bg-yellow-500 text-black"
-              }`}>
+              <span
+                className={`text-xs px-3 py-1 rounded-full ${
+                  proyecto.estado.includes("Completado") || proyecto.estado.includes("Completed")
+                    ? theme === 'light' ? "bg-green-500 text-white" : "bg-green-600 text-white"
+                    : theme === 'light' ? "bg-yellow-400 text-black" : "bg-yellow-500 text-black"
+                }`}
+              >
                 {proyecto.estado}
               </span>
             </div>
-            
-            <p className={`mb-4 ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>{proyecto.descripcion}</p>
-            
-            <div className="flex flex-wrap gap-2">
+
+            {/* Descripción */}
+            <p className={`mb-4 ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
+              {proyecto.descripcion}
+            </p>
+
+            {/* Tecnologías */}
+            <div className="flex flex-wrap gap-2 mb-4">
               {proyecto.tecnologias.map((tech, i) => (
-                <span key={i} className={`${theme === 'light' ? 'bg-blue-500' : 'bg-orange-400'} text-white px-3 py-1 rounded-full text-sm font-medium`}>
+                <span key={i}
+                  className={`${
+                    theme === 'light' ? 'bg-blue-500' : 'bg-orange-400'
+                  } text-white px-3 py-1 rounded-full text-sm font-medium`}
+                >
                   {tech}
                 </span>
               ))}
             </div>
+
+            {/* Botón para link del proyecto */}
+            {proyecto.link && (
+              <a
+                href={proyecto.link}
+                target="_blank"
+                rel="noreferrer"
+                className={`
+                  mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm
+                  transition-all duration-300 border
+                  ${
+                    theme === "light"
+                      ? "bg-blue-600 text-white border-blue-700 hover:bg-blue-700"
+                      : "bg-orange-500 text-black border-orange-600 hover:bg-orange-400"
+                  }
+                `}
+              >
+                🔗 {language === "es" ? "Ver Proyecto" : "View Project"}
+              </a>
+            )}
           </div>
         ))}
       </div>
