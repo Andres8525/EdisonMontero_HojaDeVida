@@ -17,11 +17,11 @@ export default function Contacto() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const mensajeAlerta =
+    alert(
       language === "es"
         ? "Gracias por tu mensaje. Te contactaré pronto!"
-        : "Thank you for your message. I'll contact you soon!";
-    alert(mensajeAlerta);
+        : "Thank you for your message. I'll contact you soon!"
+    );
     setFormData({ nombre: "", email: "", mensaje: "" });
   };
 
@@ -49,12 +49,9 @@ export default function Contacto() {
       ? "shadow-[0_8px_30px_rgb(59,130,246,0.15)]"
       : "shadow-[0_8px_30px_rgb(0,0,0,0.4)]";
 
-  const accentColor =
-    theme === "light" ? "text-blue-600" : "text-orange-400";
-  const textPrimary =
-    theme === "light" ? "text-gray-900" : "text-gray-100";
-  const textSecondary =
-    theme === "light" ? "text-gray-600" : "text-gray-300";
+  const accentColor = theme === "light" ? "text-blue-600" : "text-orange-400";
+  const textPrimary = theme === "light" ? "text-gray-900" : "text-gray-100";
+  const textSecondary = theme === "light" ? "text-gray-600" : "text-gray-300";
 
   const inputBase =
     "w-full px-4 py-2 rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all duration-200";
@@ -88,14 +85,12 @@ export default function Contacto() {
           : "If you want to contact me for job opportunities, projects or collaborations, you can use the contact details or send me a message through the form."}
       </p>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Información de contacto */}
         <div
-          className={`${cardBg} border rounded-2xl p-6 md:p-8 ${shadowStyle} hover:-translate-y-2 hover:shadow-[0_12px_40px_rgb(59,130,246,0.25)] transition-all duration-300 flex flex-col gap-6`}
+          className={`${cardBg} border rounded-2xl p-6 md:p-8 ${shadowStyle} transition-all hover:-translate-y-2`}
         >
-          <h3
-            className={`text-xl md:text-2xl font-bold mb-2 ${accentColor}`}
-          >
+          <h3 className={`text-xl md:text-2xl font-bold mb-4 ${accentColor}`}>
             {language === "es"
               ? "Información de Contacto"
               : "Contact Information"}
@@ -104,23 +99,15 @@ export default function Contacto() {
           <div className="space-y-4">
             {/* Email */}
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-md">
-                <Image
-                  src="/correo.png"
-                  alt="Email icon"
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-orange-500 shadow-md">
+                <Image src="/correo.png" alt="Email" width={20} height={20} />
               </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>Email</p>
                 <a
                   href="mailto:edisongarcia890@gmail.com"
-                  className={`text-sm md:text-base ${
-                    theme === "light"
-                      ? "text-blue-700"
-                      : "text-orange-300"
+                  className={`text-sm ${
+                    theme === "light" ? "text-blue-700" : "text-orange-300"
                   } hover:underline break-all`}
                 >
                   edisongarcia890@gmail.com
@@ -130,14 +117,8 @@ export default function Contacto() {
 
             {/* Teléfono */}
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-md">
-                <Image
-                  src="/llamada.png"
-                  alt="Phone icon"
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-green-500 shadow-md">
+                <Image src="/llamada.png" alt="Phone" width={20} height={20} />
               </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>
@@ -145,10 +126,8 @@ export default function Contacto() {
                 </p>
                 <a
                   href="tel:+573114221921"
-                  className={`text-sm md:text-base ${
-                    theme === "light"
-                      ? "text-blue-700"
-                      : "text-orange-300"
+                  className={`text-sm ${
+                    theme === "light" ? "text-blue-700" : "text-orange-300"
                   } hover:underline`}
                 >
                   +57 311 422 1921
@@ -158,20 +137,14 @@ export default function Contacto() {
 
             {/* Ubicación */}
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center shadow-md">
-                <Image
-                  src="/ubi1.png"
-                  alt="Location icon"
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-red-500 shadow-md">
+                <Image src="/ubi1.png" alt="Location" width={20} height={20} />
               </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>
                   {language === "es" ? "Ubicación" : "Location"}
                 </p>
-                <p className={`text-sm md:text-base ${textSecondary}`}>
+                <p className={`text-sm ${textSecondary}`}>
                   Pasto, Nariño, Colombia
                 </p>
               </div>
@@ -179,28 +152,23 @@ export default function Contacto() {
 
             {/* LinkedIn */}
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center shadow-md">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-blue-500 shadow-md">
                 <Image
                   src="/linkedin.png"
-                  alt="LinkedIn icon"
+                  alt="LinkedIn"
                   width={20}
                   height={20}
-                  className="object-contain"
                 />
               </div>
               <div>
-                <p className={`font-semibold ${textPrimary}`}>
-                  LinkedIn
-                </p>
+                <p className={`font-semibold ${textPrimary}`}>LinkedIn</p>
                 <a
                   href="https://www.linkedin.com/in/edison-montero-886603368"
-                  className={`text-sm md:text-base ${
-                    theme === "light"
-                      ? "text-blue-700"
-                      : "text-orange-300"
-                  } hover:underline break-all`}
                   target="_blank"
                   rel="noreferrer"
+                  className={`text-sm ${
+                    theme === "light" ? "text-blue-700" : "text-orange-300"
+                  } hover:underline break-all`}
                 >
                   linkedin.com/in/edison-montero
                 </a>
@@ -209,26 +177,18 @@ export default function Contacto() {
 
             {/* GitHub */}
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center shadow-md">
-                <Image
-                  src="/github.png"
-                  alt="GitHub icon"
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
+              <div className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-700 shadow-md">
+                <Image src="/github.png" alt="GitHub" width={20} height={20} />
               </div>
               <div>
                 <p className={`font-semibold ${textPrimary}`}>GitHub</p>
                 <a
                   href="https://github.com/Andres8525"
-                  className={`text-sm md:text-base ${
-                    theme === "light"
-                      ? "text-blue-700"
-                      : "text-orange-300"
-                  } hover:underline break-all`}
                   target="_blank"
                   rel="noreferrer"
+                  className={`text-sm ${
+                    theme === "light" ? "text-blue-700" : "text-orange-300"
+                  } hover:underline break-all`}
                 >
                   github.com/Andres8525
                 </a>
@@ -237,16 +197,37 @@ export default function Contacto() {
           </div>
         </div>
 
+        {/* MÓDULO QR */}
+        <div
+          className={`${cardBg} border rounded-2xl p-6 md:p-8 ${shadowStyle} flex flex-col justify-center items-center text-center hover:-translate-y-2 transition-all`}
+        >
+          <h3 className={`text-xl md:text-2xl font-bold mb-4 ${accentColor}`}>
+            {language === "es" ? "Mi Código QR" : "My QR Code"}
+          </h3>
+
+          <p className={`text-sm md:text-base mb-4 ${textSecondary}`}>
+            {language === "es"
+              ? "Contactame a mi WhatsApp."
+              : "Contact me on WhatsApp."}
+          </p>
+
+          <div className="p-4 rounded-2xl bg-white shadow-lg w-48 h-48 flex items-center justify-center">
+            <Image
+              src="/qr.jpg"
+              alt="QR code"
+              width={180}
+              height={180}
+              className="object-contain"
+            />
+          </div>
+        </div>
+
         {/* Formulario */}
         <div
-          className={`${cardBg} border rounded-2xl p-6 md:p-8 ${shadowStyle} hover:-translate-y-2 hover:shadow-[0_12px_40px_rgb(59,130,246,0.25)] transition-all duration-300`}
+          className={`${cardBg} border rounded-2xl p-6 md:p-8 ${shadowStyle} hover:-translate-y-2 transition-all`}
         >
-          <h3
-            className={`text-xl md:text-2xl font-bold mb-4 ${accentColor}`}
-          >
-            {language === "es"
-              ? "Envíame un mensaje"
-              : "Send me a message"}
+          <h3 className={`text-xl md:text-2xl font-bold mb-4 ${accentColor}`}>
+            {language === "es" ? "Envíame un mensaje" : "Send me a message"}
           </h3>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -258,18 +239,12 @@ export default function Contacto() {
                 {language === "es" ? "Nombre" : "Name"}
               </label>
               <input
-                type="text"
                 id="nombre"
+                type="text"
                 name="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                required
                 className={`${inputBase} ${inputSkin}`}
-                placeholder={
-                  language === "es"
-                    ? "Tu nombre completo"
-                    : "Your full name"
-                }
               />
             </div>
 
@@ -281,18 +256,12 @@ export default function Contacto() {
                 Email
               </label>
               <input
-                type="email"
                 id="email"
+                type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                required
                 className={`${inputBase} ${inputSkin}`}
-                placeholder={
-                  language === "es"
-                    ? "tu@email.com"
-                    : "your@email.com"
-                }
               />
             </div>
 
@@ -306,26 +275,18 @@ export default function Contacto() {
               <textarea
                 id="mensaje"
                 name="mensaje"
+                rows={4}
                 value={formData.mensaje}
                 onChange={handleChange}
-                required
-                rows={4}
-                className={`${inputBase} ${inputSkin} resize-none`}
-                placeholder={
-                  language === "es"
-                    ? "Cuéntame en qué puedo ayudarte..."
-                    : "Tell me how I can help you..."
-                }
+                className={`${inputBase} ${inputSkin}`}
               />
             </div>
 
             <button
               type="submit"
-              className={`w-full font-semibold py-3 rounded-lg ${buttonSkin} transition-all duration-300 shadow-md hover:shadow-lg`}
+              className={`w-full py-3 rounded-lg font-semibold ${buttonSkin}`}
             >
-              {language === "es"
-                ? "Enviar Mensaje"
-                : "Send Message"}
+              {language === "es" ? "Enviar Mensaje" : "Send Message"}
             </button>
           </form>
         </div>

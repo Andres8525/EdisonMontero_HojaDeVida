@@ -17,11 +17,13 @@ export default function Proyectos() {
       estado: language === 'es' ? "Completado" : "Completed"
     },
     {
-      titulo: language === 'es' ? "Sistema de Gestión" : "Management System",
+      titulo: language === 'es' ? "CRM agendas de citas" : "Management System",
       descripcion: language === 'es'
-        ? "Aplicación para gestión de inventario y procesos"
+        ? "Aplicación para gestión de inventario y procesos "
         : "Application for inventory and process management",
+        
       tecnologias: ["JavaScript", "Node.js", "CSS"],
+      link: "https://github.com/Andres8525/CRM_JED.git",
       estado: language === 'es' ? "En desarrollo" : "In development"
     },
     {
