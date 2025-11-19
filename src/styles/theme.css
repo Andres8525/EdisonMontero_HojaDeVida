@@ -1,0 +1,24 @@
+/* ========================================
+   SISTEMA DE TEMAS - ULTRA MINIMALISTA
+   Solo estilos para los toggles
+   ======================================== */
+
+:root {
+  --accent-primary: #9333ea;
+  --accent-secondary: #7c3aed;
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+}
+
+/* NO ocultamos nada, solo definimos variables */
+[data-theme="light"] {
+  --accent-primary: #9333ea;
+  --accent-secondary: #7c3aed;
+}
+
+[data-theme="dark"] {
+  --accent-primary: #9333ea;
+  --accent-secondary: #7c3aed;
+}
+
+/* SIN visibility hidden - tu página siempre será visible */

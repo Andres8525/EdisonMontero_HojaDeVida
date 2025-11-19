@@ -1,79 +1,187 @@
 "use client";
+
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Contacto() {
+  const { language } = useLanguage();
+  const { theme } = useTheme();
+
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
-    mensaje: ""
+    mensaje: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert("Gracias por tu mensaje. Te contactaré pronto!");
+    const mensajeAlerta =
+      language === "es"
+        ? "Gracias por tu mensaje. Te contactaré pronto!"
+        : "Thank you for your message. I'll contact you soon!";
+    alert(mensajeAlerta);
     setFormData({ nombre: "", email: "", mensaje: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
+  // Estilos coherentes con ExperienciaLaboral y Proyectos
+  const containerBg =
+    theme === "light"
+      ? "bg-gradient-to-br from-blue-100 to-blue-200"
+      : "bg-gradient-to-br from-[#1E293B] to-[#334155]";
+
+  const cardBg =
+    theme === "light"
+      ? "bg-white/80 backdrop-blur-xl border-blue-300/40"
+      : "bg-gray-800/40 backdrop-blur-xl border-blue-500/20";
+
+  const shadowStyle =
+    theme === "light"
+      ? "shadow-[0_8px_30px_rgb(59,130,246,0.15)]"
+      : "shadow-[0_8px_30px_rgb(0,0,0,0.4)]";
+
+  const accentColor =
+    theme === "light" ? "text-blue-600" : "text-orange-400";
+  const textPrimary =
+    theme === "light" ? "text-gray-900" : "text-gray-100";
+  const textSecondary =
+    theme === "light" ? "text-gray-600" : "text-gray-300";
+
+  const inputBase =
+    "w-full px-4 py-2 rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all duration-200";
+
+  const inputSkin =
+    theme === "light"
+      ? "bg-white/90 border border-blue-200 text-gray-900 placeholder-gray-400"
+      : "bg-black/30 border border-blue-500/40 text-gray-100 placeholder-gray-400";
+
+  const buttonSkin =
+    theme === "light"
+      ? "bg-blue-600 hover:bg-blue-700 text-white"
+      : "bg-orange-500 hover:bg-orange-400 text-black";
+
   return (
-    <section id="contacto" className="py-16 px-4 md:px-20 bg-[#2A517E]">
-      <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-8 text-center">Mi Contacto</h2>
-      
+    <section
+      className={`py-16 px-4 md:px-20 ${containerBg} rounded-2xl ${shadowStyle} transition-all duration-500`}
+    >
+      <h2
+        className={`text-3xl md:text-4xl font-bold ${accentColor} mb-4 text-center`}
+      >
+        {language === "es" ? "Mi Contacto" : "Contact Me"}
+      </h2>
+
+      <p
+        className={`${textSecondary} text-sm md:text-base mb-10 text-center max-w-2xl mx-auto`}
+      >
+        {language === "es"
+          ? "Si deseas comunicarte conmigo para oportunidades laborales, proyectos o colaboraciones, puedes usar los datos de contacto o enviarme un mensaje a través del formulario."
+          : "If you want to contact me for job opportunities, projects or collaborations, you can use the contact details or send me a message through the form."}
+      </p>
+
       <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {/* Información de contacto */}
-        <div className="bg-purple-200 text-black p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-bold mb-4 text-orange-600">Información de Contacto</h3>
-          
+        <div
+          className={`${cardBg} border rounded-2xl p-6 md:p-8 ${shadowStyle} hover:-translate-y-2 hover:shadow-[0_12px_40px_rgb(59,130,246,0.25)] transition-all duration-300 flex flex-col gap-6`}
+        >
+          <h3
+            className={`text-xl md:text-2xl font-bold mb-2 ${accentColor}`}
+          >
+            {language === "es"
+              ? "Información de Contacto"
+              : "Contact Information"}
+          </h3>
+
           <div className="space-y-4">
             <div className="flex items-start gap-3">
               <span className="text-2xl">📧</span>
               <div>
-                <p className="font-semibold">Email</p>
-                <a href="mailto:edison.montero@example.com" className="text-blue-600 hover:underline">
+                <p className={`font-semibold ${textPrimary}`}>Email</p>
+                <a
+                  href="mailto:edisongarcia890@gmail.com"
+                  className={`text-sm md:text-base ${
+                    theme === "light"
+                      ? "text-blue-700"
+                      : "text-orange-300"
+                  } hover:underline`}
+                >
                   edisongarcia890@gmail.com
                 </a>
               </div>
             </div>
-            
+
             <div className="flex items-start gap-3">
               <span className="text-2xl">📱</span>
               <div>
-                <p className="font-semibold">Teléfono</p>
-                <a href="tel:+573001234567" className="text-blue-600 hover:underline">
+                <p className={`font-semibold ${textPrimary}`}>
+                  {language === "es" ? "Teléfono" : "Phone"}
+                </p>
+                <a
+                  href="tel:+573114221921"
+                  className={`text-sm md:text-base ${
+                    theme === "light"
+                      ? "text-blue-700"
+                      : "text-orange-300"
+                  } hover:underline`}
+                >
                   +57 311 422 1921
                 </a>
               </div>
             </div>
-            
+
             <div className="flex items-start gap-3">
               <span className="text-2xl">📍</span>
               <div>
-                <p className="font-semibold">Ubicación</p>
-                <p className="text-gray-700">Pasto, Nariño, Colombia</p>
+                <p className={`font-semibold ${textPrimary}`}>
+                  {language === "es" ? "Ubicación" : "Location"}
+                </p>
+                <p className={`text-sm md:text-base ${textSecondary}`}>
+                  Pasto, Nariño, Colombia
+                </p>
               </div>
             </div>
-            
+
             <div className="flex items-start gap-3">
               <span className="text-2xl">💼</span>
               <div>
-                <p className="font-semibold">LinkedIn</p>
-                <a href="#" className="text-blue-600 hover:underline">
+                <p className={`font-semibold ${textPrimary}`}>
+                  LinkedIn
+                </p>
+                <a
+                  href="#"
+                  className={`text-sm md:text-base ${
+                    theme === "light"
+                      ? "text-blue-700"
+                      : "text-orange-300"
+                  } hover:underline`}
+                >
                   linkedin.com/in/edison-montero
                 </a>
               </div>
             </div>
-            
+
             <div className="flex items-start gap-3">
               <span className="text-2xl">💻</span>
               <div>
-                <p className="font-semibold">GitHub</p>
-                <a href="#" className="text-blue-600 hover:underline">
+                <p className={`font-semibold ${textPrimary}`}>GitHub</p>
+                <a
+                  href="https://github.com/Andres8525"
+                  className={`text-sm md:text-base ${
+                    theme === "light"
+                      ? "text-blue-700"
+                      : "text-orange-300"
+                  } hover:underline`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   github.com/Andres8525
                 </a>
               </div>
@@ -81,14 +189,25 @@ export default function Contacto() {
           </div>
         </div>
 
-        {/* Formulario de contacto */}
-        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md">
-          <h3 className="text-xl font-bold mb-4 text-orange-300">Envíame un mensaje</h3>
-          
+        {/* Formulario */}
+        <div
+          className={`${cardBg} border rounded-2xl p-6 md:p-8 ${shadowStyle} hover:-translate-y-2 hover:shadow-[0_12px_40px_rgb(59,130,246,0.25)] transition-all duration-300`}
+        >
+          <h3
+            className={`text-xl md:text-2xl font-bold mb-4 ${accentColor}`}
+          >
+            {language === "es"
+              ? "Envíame un mensaje"
+              : "Send me a message"}
+          </h3>
+
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="nombre" className="block text-sm font-medium mb-2">
-                Nombre
+              <label
+                htmlFor="nombre"
+                className={`block text-sm font-medium mb-2 ${textPrimary}`}
+              >
+                {language === "es" ? "Nombre" : "Name"}
               </label>
               <input
                 type="text"
@@ -97,13 +216,20 @@ export default function Contacto() {
                 value={formData.nombre}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                placeholder="Tu nombre"
+                className={`${inputBase} ${inputSkin}`}
+                placeholder={
+                  language === "es"
+                    ? "Tu nombre completo"
+                    : "Your full name"
+                }
               />
             </div>
-            
+
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="email"
+                className={`block text-sm font-medium mb-2 ${textPrimary}`}
+              >
                 Email
               </label>
               <input
@@ -113,14 +239,21 @@ export default function Contacto() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                placeholder="tu@email.com"
+                className={`${inputBase} ${inputSkin}`}
+                placeholder={
+                  language === "es"
+                    ? "tu@email.com"
+                    : "your@email.com"
+                }
               />
             </div>
-            
+
             <div>
-              <label htmlFor="mensaje" className="block text-sm font-medium mb-2">
-                Mensaje
+              <label
+                htmlFor="mensaje"
+                className={`block text-sm font-medium mb-2 ${textPrimary}`}
+              >
+                {language === "es" ? "Mensaje" : "Message"}
               </label>
               <textarea
                 id="mensaje"
@@ -129,16 +262,22 @@ export default function Contacto() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400"
-                placeholder="Escribe tu mensaje aquí..."
+                className={`${inputBase} ${inputSkin} resize-none`}
+                placeholder={
+                  language === "es"
+                    ? "Cuéntame en qué puedo ayudarte..."
+                    : "Tell me how I can help you..."
+                }
               />
             </div>
-            
+
             <button
               type="submit"
-              className="w-full bg-orange-400 hover:bg-orange-500 text-white font-semibold py-3 rounded-lg transition-colors"
+              className={`w-full font-semibold py-3 rounded-lg ${buttonSkin} transition-all duration-300 shadow-md hover:shadow-lg`}
             >
-              Enviar Mensaje
+              {language === "es"
+                ? "Enviar Mensaje"
+                : "Send Message"}
             </button>
           </form>
         </div>
