@@ -93,6 +93,26 @@ export default function ExperienciaLaboral() {
           </div>
         ))}
       </div>
+
+      {/* 📄 Botón para abrir CV */}
+      <div className="text-center mt-10">
+        <a
+          href="/Cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`
+            inline-block px-6 py-3 rounded-xl font-semibold text-sm md:text-base transition-all
+            shadow-md hover:shadow-lg
+            ${
+              theme === "light"
+                ? "bg-blue-600 text-white hover:bg-blue-700"
+                : "bg-orange-500 text-black hover:bg-orange-400"
+            }
+          `}
+        >
+          📄 {language === "es" ? "Ver Hoja de Vida" : "View Resume"}
+        </a>
+      </div>
     </section>
   );
 }
