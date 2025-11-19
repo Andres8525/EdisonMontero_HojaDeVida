@@ -106,7 +106,7 @@ export default function Page() {
               } ${shadowStyle} hover:scale-105 transition-transform duration-300`}
             >
               <Image
-                src="/P1.jpg"
+                src="/P11.jpg"
                 alt="Edison Montero García"
                 fill
                 className="object-cover"
